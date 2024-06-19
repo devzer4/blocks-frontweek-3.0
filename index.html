@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontWeek: Blocks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="svg/blocks-logo.svg" alt="">
+        </div>
+        <div class="cta">
+            <a href="" class="btn">See more</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div>
+            <h1 class="main-title">Bl<br/>oc<br/>ks</h1>
+        </div>
+        <div>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.7.1/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/R1m7ztdY3NRPF6xW/scene.splinecode"></spline-viewer>
+        </div>
+        <div>
+            <h5 class="text-unsleash">Unsleash the power of interaction</h5>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        window.onload = function() {
+            var shadowRoot = document.querySelector('spline-viewer').shadowRoot;
+            shadowRoot.querySelector('#logo').remove();
+        }
+
+        var tl = gsap.timeline();
+
+        tl.from("header div", {
+            x: -200,
+            opacity: 0,
+            duration: 2,
+            stagger: {each: 0.5},
+            ease: "power4.out",
+        })
+        .from(".container div", {
+            x: -200,
+            opacity: 0,
+            duration: 2,
+            stagger: {each: 0.5},
+            ease: "power4.out",
+        }, "-=1.8")
+
+    </script>
+</body>
+</html>
